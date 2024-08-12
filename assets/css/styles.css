@@ -11,13 +11,13 @@ body {
 
 /* Light and Dark Mode Styles */
 .dark {
-  background-color: var(--dark);
-  color: var(--light);
+  background-color: #31169f;
+  color: #F1F1F1;
 }
 
 .light {
-  background-color: var(--light);
-  color: var(--dark);
+  background-color: #f1d3ff;
+  color: #17202a;
 }
 
 /* Toggle Button Styles */

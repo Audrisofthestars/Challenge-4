@@ -1,22 +1,25 @@
 // TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleButton= document.getElementById('toggleMode');
+  const toggleButton = document.getElementById('toggleMode');
   const body = document.body;
 
-  //Check the saved theme on page load
+  // Check the saved theme on page load
   if (localStorage.getItem('theme') === 'dark') {
-    body.classList.add('dark-mode');
+    body.classList.add('dark');
+    body.classList.remove('light');
   } else {
-    body.classList.add('light-mode');
+    body.classList.add('light');
+    body.classList.remove('dark');
   }
+
   toggleButton.addEventListener('click', () => {
-    if (body.classList.contains('light-mode')) {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
+    if (body.classList.contains('light')) {
+      body.classList.remove('light');
+      body.classList.add('dark');
       localStorage.setItem('theme', 'dark');
     } else {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
+      body.classList.remove('dark');
+      body.classList.add('light');
       localStorage.setItem('theme', 'light');
     }
   });

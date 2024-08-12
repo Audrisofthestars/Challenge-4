@@ -35,10 +35,6 @@ body {
   gap: 10px;
 }
 
-.icon-sun, .icon-moon {
-  display: none; /* Hide icons initially */
-}
-
 .dark #toggleMode .icon-sun {
   display: none; /* Hide sun icon in dark mode */
 }

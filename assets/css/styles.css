@@ -1,162 +1,61 @@
-/*
-  Resets
-*/
-*,
-*:before,
-*:after {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  height: 100%;
-}
-
+/* Base styles */
 body {
   min-height: 100%;
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Ensure vertical stacking */
+  flex-direction: column;
   font-family: Arial, sans-serif;
   transition: background-color 0.5s, color 0.5s;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-size: 100%;
-}
-
-input,
-select,
-option,
-optgroup,
-textarea,
-button,
-pre,
-code {
-  font-size: 100%;
-  font-family: inherit;
-}
-
-ol,
-ul {
-  list-style: none;
-}
-
-/*
-  General Styles
-*/
-/*
-  Universal
-*/
-:root {
-  --light: #fff;
-  --light-accent: #f9f9fb;
-  --dark: #000;
-  --dark-accent: #222;
-  --dark-accent-action: #111;
-  --action: #563d7c;
-  --action-accent: #8570a5;
-  --disabled: #aaa;
-  --error: #ff0022;
-  --circle-color: #ffb100;
-}
-
-* {
-  transition: background-color ease-in 0.5s;
-}
-
-/*
-  Tags
-*/
-header {
-  display: flex;
-  flex-direction: column; /* Stack header content vertically */
-  align-items: flex-start;
-  padding: 2rem;
-  background: var(--light-accent);
-}
-
-header h1 {
-  margin-bottom: 1rem; /* Space between header and nav */
-}
-
-nav {
-  width: 100%;
-}
-
-nav ul {
-  display: flex;
-  justify-content: space-around; /* Distribute nav items evenly */
-  padding: 0;
-}
-
-nav li {
-  font-size: 1.5em; /* Set font size to h2 equivalent */
-}
-
-nav a {
-  text-decoration: none;
-  color: var(--dark);
-}
-
-nav a:hover {
-  color: var(--action);
-}
-
-main {
-  flex: 1; /* Take up remaining space */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem;
-  border-top: double 1rem;
-}
-
-/* Light and Dark Mode Styles (unchanged) */
-.dark header,
-.dark footer {
+/* Light and Dark Mode Styles */
+.dark {
   background-color: var(--dark);
   color: var(--light);
 }
 
-.dark main {
-  background-color: var(--dark-accent);
-  color: var(--light);
-  border-top: solid 0.5rem var(--disabled);
-}
-
-.light header,
-.light footer {
+.light {
   background-color: var(--light);
   color: var(--dark);
 }
 
-.light main {
-  background-color: var(--light-accent);
-  color: var(--dark);
-}
-
-/*
-  IDs
-*/
+/* Toggle Button Styles */
 #toggleMode {
-  font-size: 1.52em;
-  margin: 0;
-  padding: 0;
+  font-size: 1.5em; /* Adjust size of the button */
+  padding: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
-  text-shadow: 0px 0px 0.5rem var(--light-accent);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-/* Base styles for form and input elements */
+.icon-sun, .icon-moon {
+  display: none; /* Hide icons initially */
+}
+
+.dark #toggleMode .icon-sun {
+  display: none; /* Hide sun icon in dark mode */
+}
+
+.dark #toggleMode .icon-moon {
+  display: inline; /* Show moon icon in dark mode */
+}
+
+.light #toggleMode .icon-sun {
+  display: inline; /* Show sun icon in light mode */
+}
+
+.light #toggleMode .icon-moon {
+  display: none; /* Hide moon icon in light mode */
+}
+
+/* Form Styles */
 form {
   max-width: 400px;
   margin: 20px;
@@ -180,3 +79,5 @@ input, textarea {
 textarea {
   resize: vertical;
 }
+
+

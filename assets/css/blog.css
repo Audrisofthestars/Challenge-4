@@ -1,107 +1,63 @@
-/*
-  Blog Styles
-*/
+/* General styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-/*
-  Tags
-*/
-a {
-    text-decoration: none;
-  }
-  
-  article {
-    flex: 1 1 50%;
-    border: 2px solid;
-    border-radius: 4px;
-    padding: 1rem;
-    position: relative;
-  }
-  
-  article blockquote {
-    margin: 1rem;
-    margin-bottom: 2rem;
-    font-style: italic;
-  }
-  
-  article h2 {
-    text-transform: capitalize;
-    border-bottom: thin solid;
-  }
-  
-  article p {
-    position: absolute;
-    left: 1rem;
-    bottom: 0.5rem;
-    opacity: .75;
-  }
-  
-  footer {
-    position: fixed;
-    inset: 0;
-    top: calc(100% - 5rem);
-  }
-  
-  li {
-    margin: 1rem;
-  }
-  
-  main {
-    flex-direction: column;
-    gap: 1em;
-    padding: 1rem;
-    height: calc(100vh - 11rem);
-    overflow-y: scroll;
-    justify-content: flex-start;
-  }
-  
-  ul {
-    list-style: none;
-  }
-  
-  /*
-    Classes
-  */
-  .card {
-    flex: 1 1 50%;
-    border: 2px solid;
-    border-radius: 4px;
-  }
-  
-  .dark a {
-    color: var(--light);
-  }
-  
-  .light footer {
-    border-top: double 1rem;
-  }
-  
-  .light a {
-    color: var(--dark);
-  }
-  
-  /*
-    IDs
-  */
-  #back {
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    margin-right: 1rem;
-    border: groove black;
-    background-color: var(--dark-accent);
-    color: var(--light);
-  }
-  
-  
-  #back:active {
-    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, .5);
-    background-color: var(--dark-accent);
-  }
-  
-  #back:hover {
-    border-style: inset;
-    background-color: var(--dark-accent-action);
-  }
-  
-  #love {
+header {
+  background-color: var(--header-bg, #f4f4f4);
+  padding: 1rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header nav ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+header nav ul li {
+  display: inline;
+  margin-right: 1rem;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--link-color, #333);
+}
+
+footer {
+  background-color: var(--footer-bg, #f4f4f4);
+  padding: 1rem;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+footer p {
+  margin: 0;
+}
+
+/* Main content styles */
+main {
+  padding: 1rem;
+  margin-bottom: 3rem; /* To ensure content doesn't go under the fixed footer */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  header nav ul {
     text-align: center;
   }
+
+  header nav ul li {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}
